@@ -1,4 +1,4 @@
-5-package fr.epf.min1.speedycart
+package fr.epf.min1.speedycart
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
