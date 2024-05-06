@@ -38,6 +38,7 @@ android {
 
 dependencies {
 
+    // Dépendances principales
     implementation(libs.core.ktx)
     implementation(libs.appcompat)
     implementation(libs.material)
@@ -45,4 +46,28 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+    // Déclaration de la version de Jetpack Compose
+    implementation(platform("androidx.compose:compose-bom:2023.08.00"))
+
+    // Dépendances spécifiques à Jetpack Compose
+    implementation(libs.androidx.activity.compose)
+    //noinspection UseTomlInstead
+    implementation("androidx.compose.material3:material3")
+    //noinspection UseTomlInstead
+    implementation("androidx.compose.ui:ui")
+    //noinspection UseTomlInstead
+    implementation("androidx.compose.ui:ui-tooling-preview")
+    implementation(libs.core.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    //noinspection UseTomlInstead
+    debugImplementation("androidx.compose.ui:ui-test-manifest")
+    //noinspection UseTomlInstead
+    debugImplementation("androidx.compose.ui:ui-tooling")
+
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.retrofit2.converter.scalars)
+
 }
