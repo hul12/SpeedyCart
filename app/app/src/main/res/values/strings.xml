@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">SpeedyCart</string>
+    <string name="email_textview_login_screen_text">E-mail</string>
+    <string name="password_textview_login_screen_text">Mot de passe</string>
+    <string name="forgetpasswordink_tewtview_login_screen_text">Mot de passe oublié?</string>
+    <string name="login_button_login_screen_text">Se connecter</string>
+    <string name="signup_textview_login_screen_text">Pas encore de compte ?</string>
+    <string name="signuplink_textview_login_screen_text">Inscrivez-vous</string>
 </resources>

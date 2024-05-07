@@ -70,4 +70,7 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.retrofit2.converter.scalars)
 
+    //Gson
+    implementation("com.google.code.gson:gson:2.10.1")
+
 }

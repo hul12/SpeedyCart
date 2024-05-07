@@ -8,6 +8,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import fr.epf.min1.speedycart.ui.viewmodels.ClientUiState
 import fr.epf.min1.speedycart.ui.viewmodels.ClientViewModel
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import fr.epf.min1.speedycart.data.Client
 
 private const val TAG = "MainActivity"
 
@@ -29,7 +32,12 @@ class MainActivity : AppCompatActivity() {
             viewModel.clientUiState.collect { state ->
                 when (state) {
                     is ClientUiState.Success -> {
-                        nameTextView.text = state.clients
+                        //nameTextView.text = state.clients
+                        var json = state.clients
+
+                        val type = object : TypeToken<List<Client>>() {}.type
+                        var data = Gson().fromJson<List<Client>>(json, type)
+                        nameTextView.text = data.get(0).firstname
                     }
                     is ClientUiState.Loading -> {
                         nameTextView.text = "Loading..."
