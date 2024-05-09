@@ -6,4 +6,16 @@
     <string name="login_button_login_screen_text">Se connecter</string>
     <string name="signup_textview_login_screen_text">Pas encore de compte ?</string>
     <string name="signuplink_textview_login_screen_text">Inscrivez-vous</string>
+    <string name="email_textview_signup_screen_text">Email</string>
+    <string name="password_textview_signup_screen_text">Mot de passe</string>
+    <string name="passwordretype_textview_signup_screen_text">Entrez à nouveau le mot de passe</string>
+    <string name="usertype_textview_signup_screen_text">Vous êtes :</string>
+    <string name="title_textview_signup_screen_text">Inscription</string>
+    <string name="button_signup_screen_text">Valider</string>
+    <string name="title_textview_userinfo_screen_text">Mon compte client</string>
+    <string name="lastname_textview_userinfo_screen_text">Nom :</string>
+    <string name="firstname_textview_userinfo_screen_text">Prénom :</string>
+    <string name="mail_textview_userinfo_screen_text">E-mail :</string>
+    <string name="modify_button_userinfo_screen_text">Modifier des informations</string>
+    <string name="delete_button_userinfo_screen_text">Supprimer le compte</string>
 </resources>
