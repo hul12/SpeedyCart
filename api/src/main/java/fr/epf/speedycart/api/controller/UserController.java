@@ -1,29 +1,50 @@
 package fr.epf.speedycart.api.controller;
 
-import fr.epf.speedycart.api.dao.UserDao;
 import fr.epf.speedycart.api.model.User;
+import fr.epf.speedycart.api.service.UserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/users")
 public class UserController {
 
     @Autowired
-    private UserDao userDao;
+    private UserService userService;
 
-    @GetMapping
-    public List<User> listeUsers() {
-        return userDao.findAll();
+    @PostMapping("/user")
+    public ResponseEntity<User> saveUser(@RequestBody @Valid User user) {
+        User userAdded = userService.saveUserData(user);
+        URI location = ServletUriComponentsBuilder
+                .fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(userAdded.getId())
+                .toUri();
+        return ResponseEntity.created(location).build();
     }
 
-    @GetMapping("/{id}")
-    public User afficherUnUser(@PathVariable long id) {
-        return userDao.findById(id);
+    @GetMapping("/users")
+    public List<User> getUsers() {
+        return userService.getUsersData();
+    }
+
+    @GetMapping("/user/{id}")
+    public User getUser(@PathVariable long id) {
+        return userService.getUserData(id);
+    }
+
+    @PutMapping("/user")
+    public User setUser(@Valid @RequestBody User user) {
+        return userService.updateUserData(user);
+    }
+
+    @DeleteMapping("/user/{id}")
+    public void deleteUser(@PathVariable long id) {
+        userService.deleteUserData(id);
     }
 }
