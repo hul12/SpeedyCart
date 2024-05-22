@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">SpidiCart</string>
+    <string name="app_logo">Logo de SpidiCart</string>
+    <string name="app_tagline">Delivery App</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="login">Login</string>
+    <string name="create_account">Create an account</string>
+    <string name="full_name">Full Name</string>
+    <string name="username">Username</string>
+    <string name="repeat_password">Repeat Password</string>
+    <string name="create_account_button">Create Account</string>
+    <string name="trouble_logging_in">Trouble Logging in?</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="return_to_login">Return to Login Page</string>
+</resources>
